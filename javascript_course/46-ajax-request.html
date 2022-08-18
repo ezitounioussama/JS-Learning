@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="ajax_request";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>AJAX - Request</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <header>
+                <div class="logo-area">
+                    <img src="img/logo_js.png" alt="logo javascript">
+                </div>
+                <div class="course-title">
+                    <h1>Javascript Course for Beginners</h1>
+                    <h2>Instructor: Ivan Lourenço Gomes</h2>
+                </div>
+            </header>
+
+            <main>
+
+                <h3>AJAX - Request</h3>
+
+                <p>
+                    To initiate an HTTP request, we need to create a new XMLHttpRequest object.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    var xhttp = new XMLHttpRequest();
+
+                    </code>
+                </pre>
+
+                <p>
+                    Older versions of Internet Explorer (Prior to 6) don't offer support to the XMLHttpRequest object, 
+                    therefore to ensure compatibility we can use a ternary of and include a fallback to
+                    Microsoft's ActiveXObject:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    
+    var xhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+    
+                    </code>
+                </pre>
+
+
+                <p>
+                    This object will be responsible for doing the HTTP request. 
+                    When this is done it's important to know the states of an HTTP request:
+                </p>
+
+                <div class="tableBox">
+                    <table>
+                        <tr>
+                            <th>State</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Request initialized</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Connection to the server established</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Request received</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Processing request</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Response received and request finalized</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <p>
+                    The state that is interesting to us is 4, which is when we receive the response back.
+                    Besides the state we also need to pay attention to the status of the request to make sure it is not 
+                    an error. The table below shows the most common status codes:
+                </p>
+
+                <div class="tableBox">
+                    <table>
+                        <tr>
+                            <th>Status</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>200</td>
+                            <td>OK - Response received successfully</td>
+                        </tr>
+                        <tr>
+                            <td>403</td>
+                            <td>Not authorized</td>
+                        </tr>
+                        <tr>
+                            <td>404</td>
+                            <td>Not found</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <p>
+                    Now we need to create a function that will use basically 4 properties of the XMLHttpRequest object:
+                </p>
+
+                <li><b>onreadystatechange:</b> used to track the change of states in a request.</li>
+                <li><b>readyState:</b> the current state of a request.</li>
+                <li><b>status:</b> the status code of the request.</li>
+                <li><b>respose text:</b> the actual response of the request (the data we are looking for)</li>
+
+                <pre>
+                    <code class="javascript">
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+        }
+    };
+
+                    </code>
+                </pre>
+
+                <p>
+                    Let's now send our first HTTP request to <a target="_blank" href="https://opentdb.com/">Open Trivia</a>, a database of trivia questions.
+                    In the next project we will use it to create an interactive quiz game.
+                </p>
+
+                <p>
+                    The open method will be used to start the request. In this method we need two arguments:
+
+                    <li>The method used to send the request - "GET" ou "POST".</li>
+                    <li>The URL of the server.</li>
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    xhttp.open("GET", "https://opentdb.com/api.php?amount=1");
+    xhttp.send();
+
+                    </code>
+                </pre>
+
+                <p>
+                    If all went well we now should be viewing the response. In the next lesson we'll learn how to work with it.
+                </p>
+
+                
+                
+
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+
+        <script src="js/scripts.js"></script>
+
+    </body>
+
+</html>
+

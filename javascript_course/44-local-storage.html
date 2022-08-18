@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="localstorage";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Local Storage & Session Storage</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+        <style>
+
+
+            
+
+            #not-me {
+                text-decoration: underline;
+                cursor: pointer;
+                color: blue;
+                font-size: 12px;
+                font-weight: 300;
+            }
+
+
+
+        </style>
+        
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <header>
+                <div class="logo-area">
+                    <img src="img/logo_js.png" alt="logo javascript">
+                </div>
+                <div class="course-title">
+                    <h1>Javascript Course for Beginners</h1>
+                    <h2>Instructor: Ivan Lourenço Gomes</h2>
+                </div>
+            </header>
+
+            <main>
+                <h3>LocalStorage</h3>
+                
+
+                <p>
+                    Local Storage is a property of the window object that can store data in the user's computer. By doing this we can
+                    remember information to use everytime this user visits the website. 
+                </p>
+
+                <p>
+                    We could store the user's name, preferences etc. but never sensitive information like passwords or confidential information 
+                    because localStorage is not a safe place to do it.
+                </p>
+
+                <p>
+                    Data is stored in localStorage as key value pairs and the value must always be in string format
+                </p>
+
+                <h5>Storing data</h5>
+
+                <p>  
+                    We use the setItem to store data in localStorage:          
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    window.localStorage.setItem("name", "ivan");
+    // As we already learned, the window object can be ommited for simplicity
+    
+    // Getting data stored in localStorage is as easy as getting values from objects:
+    console.log( localStorage['name'] );
+    // or
+    console.log( localStorage.name );
+                    </code>
+                </pre>
+                    This information is stored indefinitely until the user cleans the localStorage or the data is erased via Javascript code.
+                    The user can access all information stored in localStorage by going to the Application tab in the developer tools, under Storage > Local Storage.
+                </p>
+
+                <h5>Remove data</h5>
+
+                <p>
+                    We use the removeItem method to erase data from the localStorage.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    localStorage.removeItem("name");
+                    </code>
+                </pre>
+
+                <h3>sessionStorage</h3>
+
+                <p>
+                    sessionStorage is very similar to localStorage with the difference that the data is only kept during the session. This means 
+                    that if the user closes the tab or the browser, the information is erased.
+                </p>
+
+                <p>
+                    sessionStorage also uses the setItem and removeItem methods to store and erase data.
+                </p>
+
+                <h3>A practical example</h3>
+
+                <div id="name-field">
+
+                    <input id="name-user" type="text" placeholder="Type your name...">
+            
+                    &nbsp;&nbsp;
+    
+                    <button id="submit-name">Submit</button>
+                    <br>
+
+                </div>
+
+
+                <p id="welcome-area" style="font-weight: bold; font-size: 18px; color: #27ae61; display: none;">
+                    <span id="welcome-text">Hi Ivan, how are you?</span>
+                    <br>
+                    <span id="not-me">Not Ivan?</span>
+                </p>
+
+
+                
+
+               
+
+
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+
+        <script src="js/scripts.js"></script>
+
+    </body>
+
+</html>

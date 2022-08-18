@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="namespaces";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Namespaces</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <header>
+                <div class="logo-area">
+                    <img src="img/logo_js.png" alt="logo javascript">
+                </div>
+                <div class="course-title">
+                    <h1>Javascript Course for Beginners</h1>
+                    <h2>Instructor: Ivan Lourenço Gomes</h2>
+                </div>
+            </header>
+
+            <main>
+
+                <h3>Namespaces</h3>
+
+                <p>
+                    Earlier in the course we talked about variable scope and we saw that global variables can be accessed from anywhere in the code.
+                </p>
+
+                <p>
+                    As our application grows and becomes more complex, it is likely that at some point two variables or functions 
+                    will end up having the same name, resulting in conflict.
+                </p>
+
+                <p>
+                    To avoid this we can make use of namespaces, which will create a local scope for our variables and functions. Javascript 
+                    doesn't actually have namespaces like other programming languages, so what we'll see here are alternative ways
+                    of achieving the same outcome. The most common way of simulating namespaces is via objects.
+                </p>
+
+                <h4>Namespaces with objects</h4>
+
+                <pre>
+                    <code class="javascript">
+
+    var bestSellersSlider = {};
+    
+    bestSellersSlider.products = ['product 1', 'product 2', 'product 3'];
+    bestSellersSlider.interval = 3000;
+    bestSellersSlider.infinite = true;
+    
+    bestSellersSlider.get_products = function() {
+        console.log(this.products);
+    };
+
+    bestSellersSlider.get_products(); 
+    // We can use the keyword <i>this</i> inside objects to refer to its properties and methods.
+
+
+                    </code>
+                </pre>
+
+                <p>
+                    Note that the names "products" or "interval" are generic names that could easily be repeated many times in a large web application.
+                    Instead of adding more words to our variables, like "productsOfBestSellersSlider", and making them separate in the global scope we place them inside 
+                    an object that will hold all information about our slider.
+                </p>
+
+                <p>
+                    Not only our code is now more organized but we can use simple and meaningful names like "products" without 
+                    the risk of having a conflict with other variables throughout the code.
+                </p>
+
+                <p>
+                    Instead of creating an empty object and adding properties later, we can also create everything we need when defining it:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    var bestSellersSlider = {
+        
+        products: ['product 1', 'product 2', 'product 3'],
+        
+        interval: 3000,
+        
+        infinite: true,
+    
+        get_products: function() {
+            console.log(this.products);
+        }
+
+    };
+
+    bestSellersSlider.get_products();
+
+
+                    </code>
+                </pre>
+
+              <p>
+                  There are other ways of simulating namespaces in Javascript, like using functions and <a target="_blank" href="https://toddmotto.com/mastering-the-module-pattern/">module patterns</a>. 
+                  You can also find <a target="_blank" href="https://javascriptweblog.wordpress.com/2010/12/07/namespacing-in-javascript/">more examples here</a>.
+
+              </p>
+                
+
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+
+        <script src="js/scripts.js"></script>
+
+    </body>
+
+</html>
+

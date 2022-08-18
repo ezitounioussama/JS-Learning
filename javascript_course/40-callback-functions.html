@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="callback_functions";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Callback Functions</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <header>
+                <div class="logo-area">
+                    <img src="img/logo_js.png" alt="logo javascript">
+                </div>
+                <div class="course-title">
+                    <h1>Javascript Course for Beginners</h1>
+                    <h2>Instructor: Ivan Lourenço Gomes</h2>
+                </div>
+            </header>
+
+            <main>
+
+                <h3>Callback Functions</h3>
+
+                <p>
+                    Callback functions are passed as arguments of other functions and they are normally executed at the end of the
+                    parent function.                 
+                </p>
+
+                <p>
+                    We know that Javascript is an asynchronous language and this can be problematic sometimes, like in the 
+                    example below:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    function get_user(){
+        var u = {
+            'name': 'John'
+        };
+        return u;
+    }
+            
+    function greet_user(user) {
+        console.log('Hi ' + user.name + ', how are you?');
+    }
+            
+    var user = get_user();
+    greet_user(user);
+
+                    </code>
+                </pre>
+
+
+
+
+                <p>
+                    In this example we call the get_user() function to retrieve the name of the user, 
+                    then we use this information in the greet_user() function.
+                </p>
+
+                <p>
+                    At first, this doesn't seem to be a problem because the get_user function returned the information fast enough, 
+                    but in a real life situation that information would be retrieved from the database or from an external service which 
+                    wouldn't be as fast.
+                </p>
+
+                <p>
+                    To simulate it, let's include a 1 second delay before the first function returns the information.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    
+    function get_user(){
+        
+        window.setTimeout(function(){
+            var u = {
+                'name': 'John'
+            };
+            return u;
+        }, 1000);
+        
+    }
+
+                    </code>
+                </pre>
+
+                <p>
+                    This time we get an error in the console saying we can't get the name property of an undefined variable. 
+                    This happens because when we run the greet_user() function, we don't have the info we need yet. We can see that 
+                    Javascript doesn't wait for the first function to finish before executing the next line.
+                </p>
+
+                <p>
+                    Since most web applications use external data, that could be a big problem, but with the use of callback functions
+                    we can avoid it from happening.
+                </p>
+
+                
+                <pre>
+                    <code class="javascript">
+
+    function get_user(callback){
+
+        window.setTimeout(function(){
+            var u = {
+                'name': 'John'
+            };
+            callback(u);
+        }, 1000);
+
+    }
+            
+    function greet_user(user) {
+        console.log('Hi ' + user.name + ', how are you?');
+    }
+            
+    get_user(greet_user);
+
+                    </code>
+                </pre>
+                
+                <p>
+                    Instead of creating the greet_user() function previously, we could create it at the time we call the 
+                    get_user() function: 
+                </p>
+
+
+                <pre>
+                    <code class="javascript">
+
+    get_user(function (user) {
+        console.log('Hi ' + user.name + ', how are you?');
+    });
+
+                    </code>
+                </pre>
+               
+
+                <p>Most jQuery methods are based on callback functions:</p>
+
+                <pre>
+                    <code class="javascript">
+
+    $( "#hide" ).click(function() {
+        $(".exemplo").hide();
+    });
+
+                    </code>
+                </pre>
+                
+                <p>
+                    The setTimeout method also uses a callback function, which is the first argument:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    
+    window.setTimeout(function(){},1000);
+
+                    </code>
+                </pre>
+
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+
+        <script src="js/scripts.js"></script>
+
+    </body>
+
+</html>
+

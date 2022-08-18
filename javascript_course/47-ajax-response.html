@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="ajax_response";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>AJAX - Response</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <header>
+                <div class="logo-area">
+                    <img src="img/logo_js.png" alt="logo javascript">
+                </div>
+                <div class="course-title">
+                    <h1>Javascript Course for Beginners</h1>
+                    <h2>Instructor: Ivan Lourenço Gomes</h2>
+                </div>
+            </header>
+
+            <main>
+
+                <h3>AJAX - Response</h3>
+
+                <p>
+                    In the previous lesson we learned how to send an HTTP request using AJAX.
+                    Now let's learn how to work with the response.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    function get_question() {
+        var xhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+                        
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.responseText);
+                
+            } 
+        };
+
+        xhttp.open("GET", "https://opentdb.com/api.php?amount=1");
+        xhttp.send();
+    }
+
+    get_question();
+
+                    </code>
+                </pre>
+                
+                <p>
+                    The console will show a JSON, which is a string representation of a Javascript object:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    { 
+        "response_code":0,
+        "results":[
+            {
+                "category":"Entertainment: Books",
+                "type":"multiple",
+                "difficulty":"easy",
+                "question":"Who was the author of the 1954 novel, &quot;Lord of the Flies&quot;?",
+                "correct_answer":"William Golding",
+                "incorrect_answers":["Stephen King","F. Scott Fitzgerald","Hunter Fox"]
+            }
+        ]
+    }
+
+                    </code>
+                </pre>
+
+                <p>
+                    Now let's create a function to convert the JSON response into a Javascript object so we can 
+                    work with the response. 
+                </p>
+
+                <p>
+                    As the request will take some time to return we need to use a callback function to make sure we won't 
+                    try to do the conversion before the response is received.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    function show_question(data) {
+        var questionObj = JSON.parse(data);
+        console.log('The question is: ' + questionObj.results[0].question)
+    }
+
+    function get_question(callback) {
+        var xhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+                        
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                callback(this.responseText);
+                
+            } 
+        };
+
+        xhttp.open("GET", "https://opentdb.com/api.php?amount=1");
+        xhttp.send();
+    }
+
+    get_question(show_question);
+
+                    </code>
+                </pre>
+
+                
+
+                
+                
+
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+
+        <script src="js/scripts.js"></script>
+
+    </body>
+
+</html>
+

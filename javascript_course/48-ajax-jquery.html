@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="ajax_jquery";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>AJAX - jQuery</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <header>
+                <div class="logo-area">
+                    <img src="img/logo_js.png" alt="logo javascript">
+                </div>
+                <div class="course-title">
+                    <h1>Javascript Course for Beginners</h1>
+                    <h2>Instructor: Ivan Lourenço Gomes</h2>
+                </div>
+            </header>
+
+            <main>
+
+                <h3>AJAX - jQuery</h3>
+
+                <p>
+                    The jQuery library provides a method to do ajax requests in a simpler way. Let's do the example from the previous lesson 
+                    but this time using jQuery.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    $.ajax({
+        url : "https://opentdb.com/api.php?amount=1",
+        type: "GET",
+        dataType: "json",
+        success: function(data){
+            console.log(data);
+        },
+        error: function(){
+            console.log("Error in the request");
+        }  
+    });
+
+                    </code>
+                </pre>
+
+
+            <p>
+                Note that when we pass the dataType as JSON, the response already comes as a Javascript object so the conversion is not necessary.
+            </p>
+
+            <p>
+                We also don't need to test the status of the reqsponse because the ajax method already has the built in success and error methods.
+            </p>
+
+            <p>
+                These properties are callback functions that will be executed after the response is received.
+            </p>
+
+            <p>
+                We can also define the success and fail functions using the done and fail methods.
+            </p>
+
+            <pre>
+                <code class="javascript">
+
+    $.ajax({
+        url : "https://opentdb.com/api.php?amount=1",
+        type: "GET",
+        dataType: "json"
+    }).done(function(data){
+        console.log(data);
+    }).fail(function(){
+        console.log("Error in the request");
+    });
+
+                </code>
+            </pre>
+
+          
+                
+
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+
+        <script src="js/scripts.js"></script>
+
+    </body>
+
+</html>
+

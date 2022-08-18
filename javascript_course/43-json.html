@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="json";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>JSON</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <header>
+                <div class="logo-area">
+                    <img src="img/logo_js.png" alt="logo javascript">
+                </div>
+                <div class="course-title">
+                    <h1>Javascript Course for Beginners</h1>
+                    <h2>Instructor: Ivan Lourenço Gomes</h2>
+                </div>
+            </header>
+
+            <main>
+
+                <h3>JSON</h3>
+
+                <p>
+                    JSON is a lightweight format for storing and transporting data between applications. All the most 
+                    popular programming languages offer support for reading and writing data in JSON.
+                </p>
+
+                <p>
+                    For Javascript programmers, JSON couldn't be more convenient because it consists basically of Javascript objects.
+                    JSON stands for "Javascript Object Notation".
+                </p>
+
+                <p>
+                    Let's say we have the following object:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    var employee = {
+        'name': "Maria Silva",
+        'birth_date': '1988-10-01'
+    };
+
+                    </code>
+                </pre>
+
+                <p>
+                    JSON would be a string representation of that object which is a data type any programming language can interpret. 
+                    But we know that once something is stored as a string it is hard to retrieve the information we need, like the 
+                    name of the employee. 
+                </p>
+
+                <p>
+                    We don't need to worry about this because every programming language will have their own methods of 
+                    importing and exporting data in JSON. In Javascrip we use JSON.stringify() to convert an object into JSON and 
+                    JSON.parse() to convert JSON into an object.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    var employee_json = JSON.stringify(employee);
+    console.log(employee_json);
+    typeof employee_json;
+
+    // O console will show: '{"name":"Maria Silva","birth_date":"1988-10-01"}'
+
+                    </code>
+                </pre>
+
+                <p>
+                    If we had received that JSON from an external source we could easily convert it back into an object so 
+                    we could work with it:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    var employee_obj = JSON.parse(employee_json);
+    console.log(employee_obj);
+    typeof employee_obj;
+    console.log(employee_obj.name);
+
+                    </code>
+                </pre>
+
+                <p>
+                    Both arrays and objects can be converted into JSON:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    var group_A = ['Real Madrid', 'Porto', 'Liverpool', 'Manchester United'];
+
+    console.log( JSON.stringify(group_A) );
+
+    console.log( typeof JSON.stringify(group_A) ); // The console will show "string"
+
+                    </code>
+                </pre>
+                
+                
+                <p>
+                   Using the typeof function we can confirm that JSON is actually a string which makes it lightweight and easy to work with.
+                </p>
+
+                <p>
+                    In the next section of the course we will learn how to do HTTP requests to APIs
+                    to work with external data so we will be dealing with JSON a lot.
+                </p>
+                
+
+                
+                
+
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+
+        <script src="js/scripts.js"></script>
+
+    </body>
+
+</html>
+

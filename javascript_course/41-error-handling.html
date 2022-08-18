@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="error_handling";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Error Handling</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <header>
+                <div class="logo-area">
+                    <img src="img/logo_js.png" alt="logo javascript">
+                </div>
+                <div class="course-title">
+                    <h1>Javascript Course for Beginners</h1>
+                    <h2>Instructor: Ivan Lourenço Gomes</h2>
+                </div>
+            </header>
+
+            <main>
+
+                <h3>Error handling</h3>
+
+                <p>
+                    When we develop software or web applications we need to make sure that we handle errors, avoiding 
+                    the program from breaking.
+                </p>
+
+                <p>
+                    Using the example from the previous lesson, where we had a problem due to an undefined variable, 
+                    let's add a new line of code at the end. 
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    function get_user(){
+
+        window.setTimeout(function(){
+            var u = {
+                'name': 'John'
+            };
+            return u;
+        }, 1000);
+        
+    }
+            
+    function greet_user(user) {
+        console.log('Hi ' + user.name + ', how are you?');
+    }
+            
+    var user = get_user();
+    greet_user(user);
+    
+    console.log('New line of code');
+
+                    </code>
+                </pre>
+
+                
+                <p>
+                    Note that due to the error, everything we write after is not executed. 
+                    When this happens, all the functionality of our page can be compromised.
+                </p>
+
+                <p>
+                    We can protect our application from breaking by using try and catch statements.
+                </p>
+
+                <h3>Try/Catch</h3>
+
+                <p>
+                    The Javascript interpreter tries to execute the code inside the try block. If something goes wrong, instead of 
+                    throwing an error,
+                    it will jump to the catch block where we can add an exception and continue executing our code normally.
+                </p>
+
+
+                <pre>
+                    <code class="javascript">
+
+    try {
+        var user = get_user();
+        greet_user(user);
+    } catch(err) {
+        console.log('Hi, how are you?');
+    }    
+    
+    console.log('New line of code');
+
+                    </code>
+                </pre>
+
+                <p>
+                    Through the 'err' argument, we can access the error message to debug our code. Actually you can name it anyway
+                    you want, but 'err' is a convention therefore it is recommended to follow it.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    try {
+        var user = get_user();
+        greet_user(user);
+    } catch(err) {
+        console.log(err);
+        console.log('Hi, how are you?');
+    }    
+
+    console.log('New line of code');
+
+                    </code>
+                </pre>
+                
+                <h3>Finally</h3>
+
+                <p>
+                    after the try/catch statement, we can include a finally statement that will always be executed, 
+                    no matter if we had an error or not.
+                </p>
+                
+                <pre>
+                    <code class="javascript">
+
+    try {
+        var user = get_user();
+        greet_user(user);
+    } catch(err) {
+        console.log(err);
+        console.log('Hi, how are you?');
+    }     finally {
+        console.log('This line will be executed in all cases.');
+    }
+
+
+                    </code>
+                </pre>
+                
+                <h3>Throw</h3>
+
+                <p>
+                    The throw function is used to throw custom errors inside the try/catch structure. Let's see an example 
+                    where we don't have an actual error, but the result is not what we would expect:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    var user = {
+        'name': ""
+    }
+
+    try {
+        greet_user(user);
+    } catch {
+        console.log('Hi, how are you?');
+    }
+
+                    </code>
+                </pre>
+
+                <p>
+                    In this case there is a user variable with a name property therefore no error occurred. However, that property 
+                    was empty, generating a weird message. To tackle this, we can generate our own error if the name is empty:
+                </p>
+
+
+                <pre>
+                    <code class="javascript">
+
+    function greet_user(user) {
+        console.log('Hi ' + user.name + ', how are you?');
+    }
+            
+    var user = {
+        'name': ""
+    }
+
+    try {
+        
+        if (!user.name) {
+            throw 'Name is empty';
+        } 
+        
+        greet_user(user);
+        
+    } catch (err) {
+        console.log(err);
+        console.log('Hi guest user, how are you?');
+    }
+
+                    </code>
+                </pre>
+
+               <p>
+                   If the interpreter hits a throw statement, it goes to the catch block directly.
+               </p>
+                
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+
+        <script src="js/scripts.js"></script>
+
+    </body>
+
+</html>
+
