@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="https://unpkg.com/@sakun/system.css" />
     <link rel="stylesheet" href="style.css" />
-    <!-- <link rel="stylesheet" href="https://unpkg.com/@sakun/system.css" /> -->
     <title>Document</title>
   </head>
   <body class="window">
@@ -22,7 +23,8 @@
       </div>
     </div>
     <hr />
-    <!-- second ex -->
+
+    <!-- Second ex -->
     <hr />
     <div class="box">World Cups from 2022 to 2050:</div>
     <div class="box">
@@ -30,7 +32,44 @@
         <li>Place each year inside an li here</li>
       </ul>
     </div>
+    <hr />
 
+    <!-- Third ex -->
+    <hr />
+    <div class="box">the number of absences of a student</div>
+    <div class="box">
+      <input type="number" name="GradeOne" id="GradeOne" />
+      <input type="number" name="GradeTwo" id="GradeTwo" />
+      <input type="number" name="absences" id="absences" />
+      <button class="btn" id="calc" style="margin: 10px">calculate</button>
+      <div class="result">
+        <label id="result"></label>
+      </div>
+    </div>
+    <hr />
+
+    <!-- Forth ex -->
+
+    <hr />
+    <div class="box">
+      <table class="table">
+        <tbody>
+          <tr>
+            <th>Student</th>
+            <th>Date</th>
+            <th>Amount</th>
+          </tr>
+        </tbody>
+        <tbody id="course_sales"></tbody>
+
+        <tbody>
+          <tr style="font-weight: bold">
+            <td colspan="2">Total sold</td>
+            <td id="total_sold"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
