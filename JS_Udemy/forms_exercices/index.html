@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="forms.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="bg-gray-50">
+      <div
+        class="max-w-screen-xl px-4 py-32 mx-auto lg:h-screen lg:items-center lg:flex"
+      >
+        <div class="max-w-xl mx-auto text-center">
+          <h1 class="text-3xl font-extrabold sm:text-5xl">
+            Forms Exercices
+            <strong class="font-extrabold text-red-700 sm:block">
+              Wth JavaScript
+            </strong>
+          </h1>
+
+          <!-- <select id="option" class="mt-8 sm:leading-relaxed sm:text-xl">
+            
+          </select> -->
+          <label class="select" for="options" >
+            <select id="options" required="required" class="mt-8">
+              
+              <option value="opt1">City</option>
+              <option value="opt2">Montain</option>
+              <option value="opt3">Beach</option>
+            </select>
+            <a
+            class="m-10 relative inline-block group focus:outline-none focus:ring"
+            href="#"
+            id="clickMe"
+          >
+            <span
+              class="absolute inset-0 transition-transform translate-x-1.5 translate-y-1.5 bg-yellow-300 group-hover:translate-y-0 group-hover:translate-x-0"
+            ></span>
+
+            <span
+              class="relative inline-block px-8 py-3 text-sm font-bold tracking-widest text-black uppercase border-2 border-current group-active:text-opacity-75"
+            >
+              Click Me
+            </span>
+          </a>
+          <label id="result"></label>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
