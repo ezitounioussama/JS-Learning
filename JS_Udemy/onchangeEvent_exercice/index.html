@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="section hero is-warning is-medium">
+      <div class="container is-max-desktop">
+        <h1 class="title">
+          OnchangeEvenet with javascript and <strong>Bulma</strong>!
+        </h1>
+        <p class="subtitle">
+          Select somthing and see the <strong>Magic</strong>!
+        </p>
+        <br />
+        <div class="feild">
+          <div class="select is-danger is-rounded">
+            <select id="education_level">
+              <option value="opt1">High School</option>
+              <option value="opt2">College Graduation</option>
+              <option value="opt3">Masters Degree</option>
+              <option value="opt4">PHD</option>
+            </select>
+          </div>
+        </div>
+        <br />
+        <div class="feild">
+          <label class="label"
+            >Show the selected options here: 
+          </label>
+          <div class="tags has-addons">
+            <span class="tag is-danger are-medium" id="result"></span>
+            <a class="tag is-delete"></a>
+          </div>
+        </div>
+        <br />
+        <div class="feild">
+          <form>
+            <p class="subtitle">
+            Select the items for your order: </p>
+            <label class="checkbox">
+            <input class="is-large" type="checkbox" name="meal" value="Hamburger"> Hamburger</label><br>
+            <input type="checkbox" name="meal" value="Fries"> Fries<br>
+            <input type="checkbox" name="meal" value="Soda"> Soda
+           
+          </form>
+        <br />
+        <div class="tags has-addons">
+          <span class="tag is-success are-medium" id="checkResult"></span>
+          <a class="tag is-delete"></a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
