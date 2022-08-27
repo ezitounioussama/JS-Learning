@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600"
+      rel="stylesheet"
+    />
+    <!-- Style Framework -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>WebDev Clone</title>
+    <style>
+      * {
+        font-family: "Poppins";
+      }
+      .square {
+        width: 8px;
+        display: inline-block;
+        margin-right: 6px;
+        background-color: #e94f37;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="sticky inset-x-0 top-0 z-50 bg-gray-900">
+      <div class="max-w-screen-xl px-6 mx-auto sm:px-8 lg:px-28">
+        <div class="flex items-center justify-between h-16 px-10 py-12">
+          <div class="flex-1 md:flex md:items-center md:gap-12">
+            <a
+              class="block text-lg text-white transition hover:text-white/75"
+              href=""
+            >
+              <h1><span class="square"> &nbsp;</span>WeDesign</h1>
+            </a>
+          </div>
+
+          <div class="sticky md:flex md:items-center md:gap-12">
+            <nav
+              class="hidden md:block sticky"
+              aria-labelledby="header-navigation"
+            >
+              <h2 class="sr-only" id="header-navigation">Header navigation</h2>
+
+              <ul class="flex items-center gap-6 text-md">
+                <li>
+                  <a class="text-white transition hover:text-white/75" href="/">
+                    About
+                  </a>
+                </li>
+
+                <li>
+                  <a class="text-white transition hover:text-white/75" href="/">
+                    Services
+                  </a>
+                </li>
+
+                <li>
+                  <a class="text-white transition hover:text-white/75" href="/">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </nav>
+
+            <!-- <div class="block md:hidden">
+                <button
+                  class="p-2 text-white transition bg-gray-800 rounded hover:text-white/75"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                </button>
+              </div> -->
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="first-image" class="relative">
+      <img
+        class="brightness-50 absolute inset-0 object-cover w-full h-4/5"
+        src="img/webdesign.jpg"
+        alt="webdesign"
+      />
+
+      <div
+        class="relative justify-center max-w-screen-xl mx-auto lg:h-screen lg:items-center lg:flex"
+      >
+        <div class="max-w-xl h-[15rem] text-center sm:text-center">
+          <h1 class="text-3xl text-white sm:text-5xl">We are WeDesign!</h1>
+
+          <p class="max-w-lg mt-4 text-white sm:leading-relaxed sm:text-xl">
+            You dream, we design and build.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="flex flex-col align-center justify-center mb-5">
+        <h1 class="font-bold text-center text-2xl mb-10">About Us</h1>
+      </div>
+      <div class="flex flex-col justify-center align-center px-14">
+        <ul class="flex text-center border-b border-gray-200">
+          <li class="flex-1">
+            <a
+              class="relative block p-4 text-sm font-medium text-white bg-gray-800"
+              href=""
+            >
+              <span
+                class="absolute inset-x-0 w-full h-px bg-gray-800 -bottom-px"
+              ></span>
+              Mission
+            </a>
+          </li>
+
+          <li class="flex-1">
+            <a class="block p-4 text-sm font-medium text-gray-500" href="">
+              Vision
+            </a>
+          </li>
+
+          <li class="flex-1">
+            <a class="block p-4 text-sm font-medium text-gray-500" href="">
+              Values
+            </a>
+          </li>
+        </ul>
+        <div class="w-full bg-gray-800 flex justify-center align-center">
+          <p id="box-text" class="m-10 text-white p-4">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Repudiandae excepturi sit sed molestiae illo laborum tenetur ipsa
+            corrupti eaque, pariatur iusto maxime eius! Vitae, sequi sed dolore
+            unde et ipsum.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="flex flex-col align-center justify-center mb-5">
+        <h1 class="font-bold text-center text-2xl mt-28 mb-10">Services</h1>
+      </div>
+      <!-- This component uses Swiper JS - https://swiperjs.com/ -->
+
+      <div class="h-56 lg:px-4 lg:py-12 bg-gray-800 mb-10">
+        <div class="flex items-center justify-center max-w-3xl mx-auto">
+          <button
+            class="hidden sm:block sm:rounded sm:transition sm:text-white hover:text-gray-500 swiper-prev-button"
+            aria-label="Previous Slide"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+
+          <div class="swiper">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide">
+                <p
+                  class="text-md text-white font-medium text-center lg:px-8 xs:px-8 lg:my-8 md:my-16 sm:my-16 xs:my-16 my-16"
+                >
+                  Web design. Lorem ipsum dolor sit amet, consectetur adipiscing
+                  elit. Praesent finibus tincidunt sem non sodales. Nunc et quam
+                  in magna vehicula sollicitudin. Aliquam erat volutpat.
+                </p>
+              </li>
+
+              <li class="swiper-slide">
+                <p
+                  class="text-md text-white font-medium text-center lg:px-8 xs:px-8 lg:my-8 md:my-16 sm:my-16 xs:my-16 my-16"
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Praesent finibus tincidunt sem non sodales. Nunc et quam in
+                  magna vehicula sollicitudin. Aliquam erat volutpat. Maecenas
+                  dolor mi, aliquet ac quam aliquet, condimentum dictum nisi.
+                </p>
+              </li>
+
+              <li class="swiper-slide">
+                <p
+                  class="text-md text-white font-medium text-center lg:px-8 xs:px-8 lg:my-8 md:my-16 sm:my-16 xs:my-16 my-16"
+                >
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Suscipit a commodi amet odio molestiae maxime unde voluptas
+                  dolore quaerat earum vitae qui, itaque rerum debitis possimus
+                  repudiandae? Ut, deserunt animi.
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <button
+            class="hidden sm:block sm:rounded sm:transition sm:text-white hover:text-gray-500 swiper-next-button"
+            aria-label="Next Slide"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <script>
+        new Swiper(".swiper", {
+          effect: "fade",
+          loop: true,
+          autoplay: {
+            delay: 5000,
+          },
+          fadeEffect: {
+            crossFade: true,
+          },
+          navigation: {
+            prevEl: ".swiper-prev-button",
+            nextEl: ".swiper-next-button",
+          },
+        });
+      </script>
+    </section>
+  </body>
+</html>
