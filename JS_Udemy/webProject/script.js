@@ -52,9 +52,6 @@ let aboutUs = {
     "<ul><li>Nunc iaculis</li><li>Donec dictum fringilla</li><li>Duis convallis tortor ultrices</li><li>Curabitur in est lectus</li><li>Maecenas condimentum elit</li></ul>",
 };
 
-let space = `
-`;
-
 let selectedColor = "#1F2937";
 let unselectedColor = "#eeeeee";
 
