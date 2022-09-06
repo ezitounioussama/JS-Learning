@@ -197,7 +197,8 @@
                 </div>
                 <div class="mt-auto">
                   <p class="my-4 text-xs text-center text-gray-400">
-                    <span>Copyright © 2021</span>
+                    &copy;<span id="currentyearMobile"></span>&nbsp; All rights
+                    reserved.
                   </p>
                 </div>
               </nav>
@@ -235,7 +236,7 @@
         <h1 class="font-bold text-center text-2xl mb-10">About Us</h1>
       </div>
       <div class="tab-box flex flex-col justify-center align-center px-14">
-        <ul class="flex text-center border-b border-gray-200">
+        <ul class="flex text-center border-b border-gray-800">
           <li class="flex-1">
             <div
               class="single-tab relative block p-4 text-sm font-medium text-white bg-gray-800"
@@ -246,7 +247,7 @@
 
           <li class="flex-1">
             <div
-              class="single-tab block p-4 text-sm font-medium text-white text-gray-800"
+              class="single-tab block p-4 text-sm font-medium text-white bg-gray-500"
             >
               Vision
             </div>
@@ -254,7 +255,7 @@
 
           <li class="flex-1">
             <div
-              class="single-tab block p-4 text-sm font-medium text-white text-gray-800"
+              class="single-tab block p-4 text-sm font-medium text-white bg-gray-500"
             >
               Values
             </div>
@@ -424,13 +425,18 @@
             <div
               class="p-8 bg-white rounded-lg shadow-lg lg:p-12 lg:col-span-3"
             >
-              <form action="" class="space-y-4">
+              <form
+                action="https://formspree.io/f/meqnrvqz"
+                method="post"
+                class="space-y-4"
+              >
                 <div>
                   <label class="sr-only" for="subject">Subject</label>
                   <input
                     class="w-full p-3 text-sm border border-gray-300 rounded-lg"
                     placeholder="Subject"
                     type="text"
+                    name="subject"
                     id="subject"
                   />
                 </div>
@@ -441,6 +447,7 @@
                     <input
                       class="w-full p-3 text-sm border border-gray-300 rounded-lg"
                       placeholder="Name"
+                      name="name"
                       type="text"
                       id="fName"
                     />
@@ -452,6 +459,7 @@
                       class="w-full p-3 text-sm border border-gray-300 rounded-lg"
                       placeholder="Email"
                       type="email"
+                      name="email"
                       id="mail"
                     />
                   </div>
@@ -460,6 +468,7 @@
                 <div>
                   <label class="sr-only" for="message">Message</label>
                   <textarea
+                    name="message"
                     class="w-full p-3 text-sm border border-gray-300 rounded-lg"
                     placeholder="Message"
                     rows="8"
@@ -624,7 +633,9 @@
                 <a class="hover:opacity-75" href=""> Returns Policy </a>
               </div>
 
-              <p class="mt-4 sm:mt-0">&copy; 2022 All rights reserved.</p>
+              <p class="mt-4 sm:mt-0">
+                &copy; <span id="currentyear"></span> All rights reserved.
+              </p>
             </div>
           </div>
         </div>

@@ -52,8 +52,9 @@ let aboutUs = {
     "<ul><li>Nunc iaculis</li><li>Donec dictum fringilla</li><li>Duis convallis tortor ultrices</li><li>Curabitur in est lectus</li><li>Maecenas condimentum elit</li></ul>",
 };
 
+let black = "#000000";
 let selectedColor = "#1F2937";
-let unselectedColor = "#eeeeee";
+let unselectedColor = "#6B7280";
 
 let tabs = document.getElementsByClassName("single-tab");
 let tabBox = document.getElementById("box-text");
@@ -64,9 +65,15 @@ for (let a = 0; a < tabs.length; a++) {
     tabBox.innerHTML = aboutUs[clickedValue];
 
     for (let b = 0; b < tabs.length; b++) {
-      tabs[b].style["background-color"] = unselectedColor;
-      tabs[b].style["color"] = unselectedColor;
+      tabs[b].style.backgroundColor = unselectedColor;
+      tabs[b].style["font-weight"] = unselectedColor;
     }
     this.style["background-color"] = selectedColor;
   };
 }
+
+// Copyright
+
+document.getElementById("currentyear").innerHTML = new Date().getFullYear();
+document.getElementById("currentyearMobile").innerHTML =
+  new Date().getFullYear();
