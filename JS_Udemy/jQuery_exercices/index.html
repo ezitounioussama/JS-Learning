@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
@@ -60,13 +68,140 @@
           to test the html method.
         </p>
 
-        <p class="has-text-centered is-size-4-desktop">
+        <p id="paragraph_two" class="has-text-centered is-size-4-desktop">
           Use this
-          <span id="paragraph_two" class="has-text-weight-bold is-capitalized"
-            >paragraph</span
-          >
+          <b>paragraph</b>
           to test the text method.
         </p>
+        <p class="has-text-centered is-size-4-desktop">
+          <a
+            id="link"
+            class="is-capitalized has-text-weight-bold"
+            href="www.google.com"
+            target="_blank"
+          >
+            click
+          </a>
+          and look at the console
+        </p>
+      </div>
+      <div class="hero-body has-background-primary-light">
+        <div class="card">
+          <header class="card-header">
+            <p class="card-header-title">Change this picture</p>
+            <button class="card-header-icon" aria-label="more options">
+              <span class="icon">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </header>
+          <div class="card-content">
+            <div
+              class="is-flex is-justify-content-center is-align-items-center"
+            >
+              <img
+                id="image"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0IoZs75uZ_pjhvHZhsoOTuiGzOTkRNd4olA&usqp=CAU"
+                alt="image"
+              />
+            </div>
+          </div>
+          <footer class="card-footer">
+            <button id="change" class="card-footer-item">change</button>
+          </footer>
+        </div>
+
+        <div class="my-5">
+          <p id="test" class="has-text-centered is-size-4-desktop">
+            Use this element to <b>test</b> the empty and remove methods.
+          </p>
+        </div>
+        <!-- work with forms -->
+        <h2 class="subtitle">Exercice <strong>three</strong></h2>
+        <form action="" method="get">
+          <div class="field">
+            <label class="label">Username</label>
+            <div class="control has-icons-left has-icons-right">
+              <input
+                id="name"
+                class="input is-success"
+                type="text"
+                placeholder="Text input"
+                value="Oussama"
+              />
+              <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </div>
+            <p class="help is-success">This username is available</p>
+          </div>
+          <div class="field">
+            <label class="label">Subject</label>
+            <div class="control">
+              <div class="select">
+                <select id="options">
+                  <option>Maroc</option>
+                  <option>Rabat</option>
+                  <option>Sale</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="control">
+              <span class="checkbox">
+                <input type="checkbox" name="interest" value="I" />
+                I
+              </span>
+              <span class="checkbox">
+                <input type="checkbox" name="interest" value="agree" />
+                agree
+              </span>
+              <span class="checkbox">
+                <input
+                  type="checkbox"
+                  name="interest"
+                  value="to the terms and conditions"
+                />
+                to the terms and conditions
+              </span>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="control">
+              <label class="radio">
+                <input type="radio" name="question" />
+                Yes
+              </label>
+              <label class="radio">
+                <input type="radio" name="question" />
+                No
+              </label>
+            </div>
+          </div>
+        </form>
+        <!-- Play with Syles  -->
+        <h2 class="subtitle mt-6 mb-4">Exercice <strong>Forth</strong></h2>
+        <div class="hero is-small has-background-grey-lighter">
+          <div class="hero-body">
+            <p id="exemple_p" class="subtitle">
+              This paragraph has the class "normal". Let's add the "styling"
+              class.
+            </p>
+          </div>
+        </div>
+        <div
+          class="is-flex is-justify-content-space-evenly is-align-items-center"
+        >
+          <button id="addC" class="button mt-3">addClass</button>
+          <button id="removeC" class="button mt-3">removeClass</button>
+          <button id="toggleC" class="button mt-3">toggleClass</button>
+        </div>
       </div>
     </section>
   </body>
