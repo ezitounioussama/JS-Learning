@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- JQUERY CDN -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+      integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- TAILWIND CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- MY SCRIPT SRC -->
+    <script src="script.js" defer></script>
+    <!-- OPTIONAL STYLE -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <link rel="shortcut icon" type="image/png" href="img/fav_mini.png" />
+  </head>
+  <body>
+    <!--
+  This component uses @tailwindcss/forms and @tailwindcss/aspect-ratio
+
+  yarn add @tailwindcss/forms @tailwindcss/aspect-ratio
+  npm install @tailwindcss/forms @tailwindcss/aspect-ratio
+
+  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/aspect-ratio')]
+-->
+
+    <style>
+      .no-spinners {
+        -moz-appearance: textfield;
+      }
+
+      .no-spinners::-webkit-outer-spin-button,
+      .no-spinners::-webkit-inner-spin-button {
+        margin: 0;
+        -webkit-appearance: none;
+      }
+    </style>
+
+    <section>
+      <div class="relative px-4 py-8 mx-auto max-w-screen-xl">
+        <div class="items-start grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div class="grid grid-cols-2 gap-4 md:grid-cols-1">
+            <div class="aspect-w-1 aspect-h-1">
+              <img
+                alt="Mobile Phone Stand"
+                class="object-cover rounded-xl"
+                src="img/v-white.jpg"
+              />
+            </div>
+          </div>
+
+          <div class="sticky top-0">
+            <strong
+              class="border border-blue-600 rounded-full tracking-wide px-3 font-medium py-0.5 text-xs bg-gray-100 text-blue-600"
+            >
+              Pre Order
+            </strong>
+
+            <div class="flex justify-between mt-8">
+              <div class="max-w-[35ch]">
+                <h1 class="text-2xl font-bold">Basic T-shirt</h1>
+
+                <p class="mt-0.5 text-sm">Highest Rated Product</p>
+
+                <div class="flex mt-2 -ml-0.5">
+                  <svg
+                    class="w-5 h-5 text-yellow-400"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+
+                  <svg
+                    class="w-5 h-5 text-yellow-400"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+
+                  <svg
+                    class="w-5 h-5 text-yellow-400"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+
+                  <svg
+                    class="w-5 h-5 text-yellow-400"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+
+                  <svg
+                    class="w-5 h-5 text-gray-200"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <p id="price" class="text-lg font-bold">US$</p>
+            </div>
+
+            <form class="mt-8">
+              <fieldset>
+                <legend class="mb-1 text-sm font-medium">Color</legend>
+
+                <div class="flow-root">
+                  <div class="flex flex-wrap -m-0.5">
+                    <label for="white" class="cursor-pointer p-0.5">
+                      <input
+                        type="radio"
+                        name="color"
+                        id="white"
+                        class="sr-only peer"
+                      />
+
+                      <span
+                        class="inline-block px-3 py-1 text-xs font-medium border rounded-full group peer-checked:bg-black peer-checked:text-white"
+                      >
+                        White
+                      </span>
+                    </label>
+
+                    <label for="colored" class="cursor-pointer p-0.5">
+                      <input
+                        type="radio"
+                        name="color"
+                        id="colored"
+                        class="sr-only peer"
+                      />
+
+                      <span
+                        class="inline-block px-3 py-1 text-xs font-medium border rounded-full group peer-checked:bg-black peer-checked:text-white"
+                      >
+                        Colored
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="mt-4">
+                <legend class="mb-1 text-sm font-medium">Style</legend>
+
+                <div class="flow-root">
+                  <div class="flex flex-wrap -m-0.5">
+                    <label for="printed" class="cursor-pointer p-0.5">
+                      <input
+                        type="radio"
+                        name="style"
+                        id="printed"
+                        class="sr-only peer"
+                      />
+
+                      <span
+                        class="inline-flex items-center justify-center w-44 h-8 text-xs font-medium border rounded-full group peer-checked:bg-black peer-checked:text-white"
+                      >
+                        Printed
+                      </span>
+                    </label>
+
+                    <label for="plain" class="cursor-pointer p-0.5">
+                      <input
+                        type="radio"
+                        name="style"
+                        id="plain"
+                        class="sr-only peer"
+                      />
+
+                      <span
+                        class="inline-flex items-center justify-center w-44 h-8 text-xs font-medium border rounded-full group peer-checked:bg-black peer-checked:text-white"
+                      >
+                        Plain
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="mt-4">
+                <legend class="mb-1 text-sm font-medium">Quality</legend>
+
+                <div class="flow-root">
+                  <div class="flex flex-wrap -m-0.5">
+                    <label for="basic_quality" class="cursor-pointer p-0.5">
+                      <input
+                        type="radio"
+                        name="quality"
+                        id="basic_quality"
+                        class="sr-only peer"
+                      />
+
+                      <span
+                        class="inline-flex items-center justify-center w-44 h-8 text-xs font-medium border rounded-full group peer-checked:bg-black peer-checked:text-white"
+                      >
+                        Basic (150g / m2)
+                      </span>
+                    </label>
+
+                    <label for="high_quality" class="cursor-pointer p-0.5">
+                      <input
+                        type="radio"
+                        name="quality"
+                        id="high_quality"
+                        class="sr-only peer"
+                      />
+
+                      <span
+                        class="inline-flex items-center justify-center w-44 h-8 text-xs font-medium border rounded-full group peer-checked:bg-black peer-checked:text-white"
+                      >
+                        High (190g / m2)
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+
+              <div class="flex mt-8">
+                <div>
+                  <label for="quantity" class="sr-only">Qty</label>
+
+                  <input
+                    type="number"
+                    id="quantity"
+                    min="1"
+                    value="1"
+                    class="w-12 py-3 text-xs text-center border border-gray-200 rounded no-spinners"
+                  />
+                </div>
+
+                <button
+                  id="submit"
+                  type="submit"
+                  class="block px-5 py-3 ml-3 text-xs font-medium text-white bg-green-600 rounded hover:bg-green-500"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
