@@ -1,46 +1,67 @@
 var products = {
-  white: {
-    plain: {
+  White: {
+    Plain: {
       unit_price: 5.12,
       photo: "v-white.jpg",
     },
-    printed: {
+    Printed: {
       unit_price: 8.95,
       photo: "v-white-personalized.jpg",
     },
   },
 
-  colored: {
-    plain: {
+  Colored: {
+    Plain: {
       unit_price: 6.04,
       photo: "v-color.jpg",
     },
-    printed: {
+    Printed: {
       unit_price: 9.47,
       photo: "v-color-personalized.png",
     },
   },
 };
 
-// Search params
-
-var search_params = {
-  quantity: "",
-  color: "",
-  quality: "",
-  style: "",
-};
-
-// Additional pricing rules:
-
-// 1. The prices above are for Basic quality (q150).
-// The high quality shirt (190g/m2) has a 12% increase in the unit price.
-
-// 2. Apply the following discounts for higher quantities:
-// 1: above 1.000 units - 20% discount
-// 2: above 500 units - 12% discount
-// 3: above 100 units - 5% discount
-
 // Solution:
 
-$(function () {});
+$(document).change(function () {
+  let colorRadio = "";
+  let styleRadio = "";
+  let qualityRadio = "";
+  let quantity = "";
+  colorRadio = $("input[name='radio-color']:checked")
+    .parent("label")
+    .text()
+    .replace(/\s/g, "");
+
+  styleRadio = $("input[name='style']:checked")
+    .parent("label")
+    .text()
+    .replace(/\s/g, "");
+
+  qualityRadio = $("input[name='quality']:checked")
+    .parent("label")
+    .text()
+    .replace(/\s/g, "");
+
+  quantity = $("#quantity").val();
+
+  let result_color = $("#result-color").html(colorRadio).text();
+  let result_style = $("#result-style").html(styleRadio).text();
+  let result_quality = $("#result-quality").html(qualityRadio).text();
+  let result_quantity = $("#result-quantity").html(quantity).text();
+
+  let price = $("#price").val();
+  let final_image = products[result_color][result_style].photo;
+  let new_price = products[result_color][result_style].unit_price;
+
+  $("#product_image").attr("src", "img/" + final_image);
+
+  if (result_quality === "Basic(150g/m2)") {
+    $("#price").html(
+      Math.floor((new_price *= 1.12) * result_quantity) + " US$"
+    );
+  } else if (result_quality === "High(190g/m2)") {
+    $("#price").html(Math.floor(new_price * result_quantity) + " US$");
+  }
+});

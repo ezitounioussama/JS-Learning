@@ -50,6 +50,7 @@
           <div class="grid grid-cols-2 gap-4 md:grid-cols-1">
             <div class="aspect-w-1 aspect-h-1">
               <img
+                id="product_image"
                 alt="Mobile Phone Stand"
                 class="object-cover rounded-xl"
                 src="img/v-white.jpg"
@@ -140,7 +141,7 @@
                     <label for="white" class="cursor-pointer p-0.5">
                       <input
                         type="radio"
-                        name="color"
+                        name="radio-color"
                         id="white"
                         class="sr-only peer"
                       />
@@ -155,7 +156,7 @@
                     <label for="colored" class="cursor-pointer p-0.5">
                       <input
                         type="radio"
-                        name="color"
+                        name="radio-color"
                         id="colored"
                         class="sr-only peer"
                       />
@@ -244,6 +245,14 @@
                 </div>
               </fieldset>
 
+              <fieldset class="mt-4 hidden">
+                <div>
+                  <p>Color:<span id="result-color"></span></p>
+                  <p>Style:<span id="result-style"></span></p>
+                  <p>Quality:<span id="result-quality"></span></p>
+                  <p>Quantity:<span id="result-quantity"></span></p>
+                </div>
+              </fieldset>
               <div class="flex mt-8">
                 <div>
                   <label for="quantity" class="sr-only">Qty</label>
