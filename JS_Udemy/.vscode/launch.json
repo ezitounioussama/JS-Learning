@@ -7,8 +7,9 @@
     {
       "type": "firefox",
       "request": "launch",
-      "name": "Open index.html",
-      "file": "/home/ki/Documents/JS-Learning/JS_Udemy/t-shirt_online_quotation/index.html"
+      "reAttach": true,
+      "name": "Launch index.html",
+      "file": "${workspaceFolder}/AJAX__API/index.html"
     }
   ]
 }
