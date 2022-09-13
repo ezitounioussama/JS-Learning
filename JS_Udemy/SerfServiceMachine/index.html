@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body
+    class="flex justify-center align-center flex-wrap-reverse md:flex-nowrap sm:flex-wrap-reverse"
+    id="app"
+  >
+    <div class="flex flex-col justify-center align-center">
+      <div class="flex justify-center align-center flex-wrap">
+        <div
+          v-for="product in products"
+          class="block overflow-hidden group m-3 p-5 border-black border cursor-pointer"
+        >
+          <!-- class for the selected items "shadow-[0_9px_0_0_rgba(0,0,0,2)] rounded-xl overflow-hidden" -->
+          <div
+            class="shadow-[0_4px_0_0_rgba(0,0,0,0.3)] border-2 border-black rounded-3xl overflow-hidden"
+          >
+            <img
+              class="group-hover:scale-105 transition-transform duration-500 object-cover w-full h-[60px] sm:h-[100px]"
+              :src="product.photo"
+              :alt="product.name"
+            />
+          </div>
+
+          <div class="relative pt-4 pb-8">
+            <h3
+              id="name"
+              class="text-sm group-hover:underline group-hover:underline-offset-4"
+            >
+              {{product.name}}
+            </h3>
+
+            <p class="mt-2">
+              <span class="sr-only"> price </span>
+
+              <span class="font-medium tracking-wider" id="price">
+                {{product.price}}&dollar;
+              </span>
+            </p>
+            <hr class="mt-5" />
+            <div class="mt-5">
+              <button class="mx-3">-</button>
+              <span class="">{{product.quantity}}</span>
+              <button class="mx-3">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section>
+      <h1 class="sr-only">Checkout</h1>
+
+      <div class="relative mx-auto max-w-screen-2xl">
+        <div class="grid grid-cols-1 md:grid-cols-3 w-72">
+          <div class="py-12 bg-gray-50 md:py-24 w-72">
+            <div class="max-w-lg px-4 mx-auto lg:px-8">
+              <div class="flex items-center">
+                <span class="w-10 h-10 bg-blue-900 rounded-full"></span>
+
+                <h2 class="ml-4 font-medium">Order Details</h2>
+              </div>
+
+              <div class="mt-8">
+                <p class="text-2xl font-medium tracking-tight" id="totalPrice">
+                  TOTAL PRICE
+                </p>
+                <p class="mt-1 text-sm text-gray-500">For the purchase of</p>
+              </div>
+
+              <div class="mt-12">
+                <div class="flow-root">
+                  <ul class="-my-4 divide-y divide-gray-200">
+                    <li class="flex items-center justify-between py-4">
+                      <div class="flex items-start">
+                        <div class="ml-4">
+                          <p class="text-sm" id="selectedProductName">
+                            name of product
+                          </p>
+
+                          <dl class="mt-1 text-xs text-gray-500 space-y-1">
+                            <div>
+                              <p class="text-sm" id="selectedProductPrice">
+                                price
+                                <small class="text-gray-500">x1</small>
+                              </p>
+                            </div>
+                          </dl>
+                        </div>
+                      </div>
+                    </li>
+
+                    <!-- <li class="flex items-center justify-between py-4">
+                        <div class="flex items-start">
+                          <div class="ml-4">
+                            <p class="text-sm" id="selectedProductName">
+                              name of product
+                            </p>
+
+                            <dl class="mt-1 text-xs text-gray-500 space-y-1">
+                              <div>
+                                <p class="text-sm" id="selectedProductPrice">
+                                  price
+                                  <small class="text-gray-500">x1</small>
+                                </p>
+                              </div>
+                            </dl>
+                          </div>
+                        </div>
+                      </li> -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

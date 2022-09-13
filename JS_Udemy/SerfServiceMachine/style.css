@@ -1,0 +1,18 @@
+.quantity-area {
+  margin: 8px auto;
+  height: 14px;
+}
+
+.quantity-area button {
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.quantity-area .quantity {
+  font-weight: bold;
+  margin: 0 4px;
+}

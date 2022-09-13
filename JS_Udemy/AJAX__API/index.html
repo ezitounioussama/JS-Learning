@@ -15,8 +15,17 @@
     <!-- <script src="ajax_jQuery.js"></script> -->
     <script src="getCountries.js"></script>
     <!-- <script src="courses.js"></script> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
     <style>
+      * {
+        font-family: "Poppins", sans-serif;
+      }
       body {
         background: #b0cbf1;
       }
@@ -54,6 +63,13 @@
             SELECT YOUR COUNTRIES
           </option>
         </select>
+        <div>
+          <p class="answer">Country : <span id="countryName"></span></p>
+          <p class="answer">Year : <span id="year"></span></p>
+          <ul id="holidayList">
+            <li></li>
+          </ul>
+        </div>
       </div>
     </div>
   </body>
